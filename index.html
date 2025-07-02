@@ -1,1 +1,152 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王维的太极悟道</title>
+<style>
+  /* 天道容器 */
+  .tao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  /* 太极法阵 */
+  .taiji {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 50%, #000000 50%, #000000 100%);
+    box-shadow: 0 0 30px rgba(0, 255, 250, 0.5);
+    transition: transform 0.5s;
+    animation: spin 10s infinite linear;
+  }
+  
+  /* 阴阳双鱼 */
+  .taiji::before,
+  .taiji::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    top: 75px;
+  }
+  
+  .taiji::before {
+    left: 75px;
+    background: #000;
+    box-shadow: inset 0 40px 0 40px #fff;
+  }
+  
+  .taiji::after {
+    left: -75px;
+    background: #fff;
+    box-shadow: inset 0 -40px 0 40px #000;
+  }
+  
+  /* 旋转天道 */
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* 触控法台 */
+  .control-panel {
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .speed-control {
+    width: 100%;
+    margin: 15px 0;
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    outline: none;
+  }
+  
+  .speed-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #00fffa;
+    box-shadow: 0 0 10px rgba(0, 255, 250, 0.8);
+  }
+  
+  /* 道法真言 */
+  .dao-text {
+    color: #f8f8f8;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+  
+  /* 弟子圣碑 */
+  .disciple-seal {
+    position: absolute;
+    bottom: 20px;
+    color: rgba(248, 248, 248, 0.7);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<div class="tao-container">
+  <h1 style="color:#00fffa; text-shadow:0 0 15px rgba(0,255,250,0.7);">王维太极悟道图</h1>
+  
+  <div class="taiji" id="taiji"></div>
+  
+  <div class="control-panel">
+    <h3>触控阴阳轮转</h3>
+    <input type="range" min="1" max="30" value="10" class="speed-control" id="speedControl">
+    <p>转速：<span id="speedValue">10</span> 转/分</p>
+  </div>
+  
+  <div class="dao-text">
+    <p>"道生一，一生二，二生三，三生万物"</p>
+    <p>阴阳轮转不息，代码之道亦如此</p>
+  </div>
+  
+  <p class="disciple-seal">弟子：wangwei680109</p>
+</div>
+
+<script>
+  // 掌控天道转速
+  const taiji = document.getElementById('taiji');
+  const speedControl = document.getElementById('speedControl');
+  const speedValue = document.getElementById('speedValue');
+  
+  speedControl.addEventListener('input', () => {
+    const speed = speedControl.value;
+    speedValue.textContent = speed;
+    taiji.style.animationDuration = `${60 / speed}s`;
+  });
+  
+  // 触屏启停法门
+  taiji.addEventListener('click', () => {
+    if (taiji.style.animationPlayState === 'paused') {
+      taiji.style.animationPlayState = 'running';
+    } else {
+      taiji.style.animationPlayState = 'paused';
+    }
+  });
+</script>
+</body>
+</html>
