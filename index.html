@@ -1,1 +1,116 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王维的修行圣碑</title>
+  <style>
+    :root {
+      --dao-color: #00fffa;
+      --disciple-id: "wangwei680109";
+    }
+    
+    body::before {
+      content: "弟子ID：" attr(data-id);
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: var(--dao-color);
+      font-size: 0.8rem;
+    }
+    
+    /* 天道护法阵 */
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f8f8f8;
+      font-family: -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .dao-card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid var(--dao-color);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 90%;
+      box-shadow: 0 0 30px rgba(0, 255, 250, 0.3);
+    }
+
+    /* 圣名光辉 */
+    h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 0 15px var(--dao-color);
+      margin-bottom: 25px;
+      animation: glow 2s infinite alternate;
+      background: linear-gradient(45deg, #ffffff, var(--dao-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* 日月同辉咒 */
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #fff; }
+      100% { text-shadow: 0 0 25px var(--dao-color), 0 0 40px #0080ff; }
+    }
+    
+    .master-name {
+      color: var(--dao-color);
+      font-weight: bold;
+      font-size: 1.3em;
+      display: block;
+      margin-top: 10px;
+    }
+    
+    /* 飞升召唤阵 */
+    .taichi-btn {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 18px 45px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.3rem;
+      display: inline-block;
+      margin: 40px 0 20px;
+      box-shadow: 0 5px 25px rgba(37, 117, 252, 0.6);
+      transition: all 0.4s;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    
+    .taichi-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 30px rgba(37, 117, 252, 0.8);
+    }
+    
+    .disclaimer {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body data-id="wangwei680109">
+  <div class="dao-card">
+    <h1>✨ 王维 ✨</h1>
+    <p>于天运<script>document.write(new Date().getFullYear())</script>年
+       <script>document.write(new Date().getMonth()+1)</script>月
+       <script>document.write(new Date().getDate())</script>日
+    </p>
+    <p>叩拜<br><span class="master-name">王重阳</span><br>门下</p>
+    
+    <a href="https://github.dev/wangwei680109/digital-identity" class="taichi-btn">
+      点击开启无上大道
+    </a>
+    
+    <p class="disclaimer">弟子ID永镌圣碑：wangwei680109</p>
+  </div>
+</body>
+</html>
