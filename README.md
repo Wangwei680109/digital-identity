@@ -39,7 +39,7 @@
   <h1>✨ <span class="kungfu">王维</span> ✨</h1>
   <p>于<script>document.write(new Date().toLocaleDateString())</script>拜入师门</p>
   
-  <a href="https://github.dev/Wanguei680109/digital-identity" class="taichi-btn">
+  <a href="https://github.dev/Wangwei680109/digital-identity" class="taichi-btn">
     点击开启修炼
   </a>
 </body>
